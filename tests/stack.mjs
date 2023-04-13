@@ -20,9 +20,9 @@ function index(t, a, b) {
   const stack = _CTX.stack;
   let i = _CTX.i;
   if (t === true) {
-    _CTX.i = i += 2;
-    stack[i] = a;
-    stack[i - 1] = b;
+    _CTX.i += 2;
+    stack[i] = b;
+    stack[i + 1] = a;
   } else {
     _CTX.i = i -= 2;
     stack[i + 1] = null;
