@@ -16,6 +16,15 @@ function push(t, a, b) {
   }
 }
 
+function splice(t, a, b) {
+  const stack = _CTX.stack;
+  if (t === true) {
+    stack.push(a, b);
+  } else {
+    stack.splice(-2, 2);
+  }
+}
+
 function index(t, a, b) {
   const stack = _CTX.stack;
   let i = _CTX.i;
@@ -42,5 +51,6 @@ function test(fn) {
 
 run(test, {
   "push": push,
+  "splice": splice,
   "index": index,
 });
